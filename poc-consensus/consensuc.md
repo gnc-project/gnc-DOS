@@ -6,14 +6,14 @@ POC(Proof of Capacity)
 rate.
  Hash algorithm uses Shabal256, which is anti-ASIC
  
-#####Deadline
+##### Deadline
 When you mine and process Plot files, you end up with a value called deadline. These values
 represent the number of seconds that must pass since the forging of last block before block-forging
 is allowed. If no one else forges a block during this period, you can forge a block and get a block
 reward.
 
  
-#####Plotting — Create Plot File
+##### Plotting — Create Plot File
 Shabal: Shabal is the name of the crypto/hash function used in GNC. It is a rather heavy and slow
 crypto compared to many other alternatives like SHA256. Thus Shabal is a good crypto for Proof of
 capacity coins like GNC, because we store the precomputed hashes while it is still fast enough to do
@@ -21,7 +21,7 @@ smaller live verifications. GNC uses the 256bit version of Shabal, which is also
 <br/>
 <br/>
 <br/>
-######Nonce: 
+###### Nonce: 
 When generating a plot file, you generate something that is called nonces. Each nonce
 contains 256Kilobyte of data that can be used by miners to calculate Deadlines. Each nonce has its
 individual number. This number can range between 0-18446744073709551615. The number is also
@@ -30,19 +30,19 @@ file can contain many nonces
 <br/>
 <br/>
 <br/>
-######Scoop: 
+###### Scoop: 
 Each nonce is sorted into 4096 different places of data. These places are called scoop
 numbers. Each scoop contains 64byte of data which holds 2 hashes. Each of these hashes are
 xored with a final hash (we get to final hash while generating a nonce chapter).
 <br/>
 <br/>
 <br/>
-######Plot ID: 
+###### Plot ID: 
 When you create your plot file it will be bound to a specific GNC account. The numeric
 account ID is used when you create your nonces. Because of this all miners have different plot files
 even if they use the same nonce numbers.
 
-#####Generating a Nonce
+##### Generating a Nonce
 The first step in creating a nonce is to make the first seed. The seed is a 16byte long value containing
 the Plot ID and the nonce number. When this is done we start to feed the Shabal256 function to get
 our first hash.
@@ -81,7 +81,7 @@ We have now created our nonce and can store it in a plot file before we continue
 ![](https://github.com/gnc-project/gnc-docs/blob/master/image/07.png)
 <br/>
 
-######POC Format
+###### POC Format
 The POC2 nonce format is created the same way as POC1 with a slight addition to the end of the
 process. To create a POC2 formatted nonce we need to shuffle the data around.
 The data shuffling process:
